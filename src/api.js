@@ -1,4 +1,5 @@
-const BASE = (import.meta.env.VITE_API_URL || '/api').replace(/\/$/, '')
+const BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '')
+if (!BASE) console.error('VITE_API_URL is not set. Add it to frontend/.env (see .env.example).')
 const TOKEN_KEY = 'bk_voice_token'
 
 export const getToken = () => localStorage.getItem(TOKEN_KEY)
